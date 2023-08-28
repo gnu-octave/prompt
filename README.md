@@ -62,10 +62,27 @@ PS1(get_ps1())
 
 ## Similar Projects
 
+### Specific
+
 - [vim-airline](https://github.com/vim-airline/vim-airline): for vim.
 - [powerlevel10k](https://github.com/romkatv/powerlevel10k): for zsh.
+- [tide](https://github.com/IlanCosman/tide): for fish.
+- [bash-prompt](https://github.com/Freed-Wu/bash-prompt): for bash.
+- [tcl-prompt](https://github.com/Freed-Wu/tcl-prompt): for tcl.
+- [translate-shell](https://github.com/Freed-Wu/translate-shell/blob/main/src/translate_shell/utils/ps1.py):
+  for python.
+- [Reply-Plugin-Prompt](https://github.com/Freed-Wu/Reply-Plugin-Prompt): for perl.
+- [prompt-style.lua](https://github.com/Freed-Wu/prompt-style.lua): for lua.
+- [tmux-status-bar](https://github.com/Freed-Wu/tmux-status-bar): for tmux.
+- [gdb-prompt](https://github.com/Freed-Wu/gdb-prompt): for gdb.
+- [translate-shell](https://github.com/Freed-Wu/translate-shell/blob/main/src/translate_shell/tools/generate_prompt/__main__.py):
+  for lftp.
+
+### General
+
 - [powerline](https://github.com/powerline/powerline): for vim, zsh, bash,
   tmux, IPython, Awesome and Qtile.
-- [bash-prompt-style](https://github.com/Freed-Wu/bash-prompt-style): for bash.
-- [translate-shell](https://github.com/Freed-Wu/translate-shell): for python.
-- [tcl-prompt](https://github.com/Freed-Wu/tcl-prompt): for tcl.
+- [starship](https://github.com/starship/starship): for bash, cmd, elvish,
+  fish, ion, nushell, powershell, tcsh, xonsh, zsh.
+- [oh-my-posh](https://github.com/JanDeDobbeleer/oh-my-posh): for bash, cmd,
+  elvish, fish, nushell, powershell, tcsh, xonsh, zsh.
