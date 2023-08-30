@@ -8,7 +8,7 @@
 %% @example
 %% @group
 %% get_ps1('$ ', '%s', @{'black', 'white', 'a'@}, '', ' %s', @{'white', 'blue', 'b'@}, '', ' %s ', @{'green', 'red', 'c'@}, '')
-%%   @result{} ans = \e[30;47ma\e[37;44m\e[37;44m b\e[34;41m\e[32;41m c \e[0;31m\e[0m$
+%%   @result{} ans = \e[30;47ma\e[37;44m\e[37m b\e[34;41m\e[32m c \e[0;31m\e[0m$
 %% @end group
 %% @end example
 %%
@@ -51,10 +51,11 @@ for i = 1:nargin
   fg = convert_ansi_color(section{1});
   bg = convert_ansi_color(section{2});
   txt = sprintf(format, section{3});
-  if ~strcmp(last_bg, '')
-    ps = [ps, tput('setaf', last_bg, 'setab', bg), sep];
+  if strcmp(last_bg, '')
+    ps = [ps, tput('setaf', fg, 'setab', bg), txt];
+  else
+    ps = [ps, tput('setaf', last_bg, 'setab', bg), sep, tput('setaf', fg), txt];
   end
-  ps = [ps, tput('setaf', fg, 'setab', bg), txt];
   last_bg = bg;
 end
 ps = [ps, tput('reset', 'setaf', last_bg), sep, tput('reset'), prompt_string];
@@ -63,4 +64,4 @@ end
 
 %!test
 %! get_ps1('$ ', '%s', {'black', 'white', 'a'}, '', ' %s', {'white', 'blue', 'b'}, '', ' %s ', {'green', 'red', 'c'}, '');
-%! assert(ans, '\e[30;47ma\e[37;44m\e[37;44m b\e[34;41m\e[32;41m c \e[0;31m\e[0m$ ')
+%! assert(ans, '\e[30;47ma\e[37;44m\e[37m b\e[34;41m\e[32m c \e[0;31m\e[0m$ ')
